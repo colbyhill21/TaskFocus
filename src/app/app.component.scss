@@ -1,0 +1,54 @@
+.nav-holder {
+    text-align: center;
+    width: 80%;
+    height: 70px;
+    padding: 0;
+    margin: 0 10%;
+    -webkit-box-shadow: 0 8px 6px -6px rgb(17, 32, 46);
+    -moz-box-shadow: 0 8px 6px -6px rgb(17, 32, 46);
+    box-shadow: 0 8px 6px -6px rgb(17, 32, 46);
+    border-radius: 10px;
+    background-color: #338DE8;
+}
+
+.title-holder {
+    float: left;
+    width: 10%; 
+    height: auto; 
+    padding: 0 2%;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Montserrat";
+    color: white;
+    font-weight: 700;
+}
+
+.app-title {
+    margin: 0;
+    padding: 20px 0;
+    float: left;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.nav-buttons {
+    float: right;
+    width: 40%;
+    padding: 0 2%;
+    margin: 0;
+}
+
+.nav-button {
+    height: 100%;
+    margin: 0 3%;
+    padding: 20px 0;
+    float: right;
+    font-size: 25px;
+    line-height: 30px;
+    font-family: "Montserrat";
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
