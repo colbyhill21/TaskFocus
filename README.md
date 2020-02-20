@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/colbyhill21/TaskFocus/workflows/CI/badge.svg)](https://github.com/colbyhill21/TaskFocus/actions)
+
 # TaskFocus
 Web based Pomodoro Technique Timer that offers customizable intervals. I am currently working on many features to add to this project now. 
 
