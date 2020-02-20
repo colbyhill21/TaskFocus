@@ -45,10 +45,58 @@ h1 {
     margin: 0 3%;
     padding: 20px 0;
     float: right;
-    font-size: 25px;
+    font-size: min(2vw, 25px);
     line-height: 30px;
     font-family: "Montserrat";
     color: white;
     text-decoration: none;
     font-weight: 700;
+}
+.timer-holder {
+    text-align: center;
+    width: 70%;
+    padding: 2%;
+    margin: 4% 15%;
+    border-radius: 10px;
+    background-color: #4b99e6;
+}
+.option-holder {
+    text-align: center;
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.option-item {
+    text-align: center;
+    width: 33.3%;
+    float: left;
+}
+.selected-option {
+    background-color: #2d6caa;
+    border-radius: 10px;
+}
+.option-text {
+    font-family: "Montserrat";
+    font-size: min(2vw, 40px);
+    margin: 2%;
+    color: white;
+    text-decoration: none;
+}
+
+.time-section {
+    margin: 6% 0%;
+    text-align: center;
+}
+.timer-text {
+    font-size: 7vw;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.option-button {
+    text-align: center;
+    margin: 0 10%;
+    width: 30%;
+    float: left;
 }

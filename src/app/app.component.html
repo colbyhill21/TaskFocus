@@ -9,6 +9,31 @@
             <a href="" class="nav-button"> Login </a>
         </div>
     </div>
+
+    <div class="timer-holder">
+        <div class="option-holder">
+            <div class="option-item" [ngClass]="{'selected-option': focus==true}">
+                <a style="text-decoration: none;" (click)="focusSelected()" [routerLink]=""><h1 class="option-text">Focus</h1></a>
+            </div>
+            <div class="option-item" [ngClass]="{'selected-option': shortBreak==true}">
+                <a style="text-decoration: none;" (click)="shortBreakSelected()" [routerLink]=""><h1 class="option-text">Short Break</h1></a>
+            </div>
+            <div class="option-item" [ngClass]="{'selected-option': longBreak==true}">
+                <a style="text-decoration: none;" (click)="longBreakSelected()" [routerLink]=""><h1 class="option-text">Long Break</h1></a>
+            </div>
+        </div>
+        <div class="time-section">
+            <h1 class="timer-text">25:00</h1>
+        </div>
+        <div class="option-holder">
+            <div class="option-button selected-option">
+                <a style="text-decoration: none;" (click)="startStopPressed" [routerLink]=""><h1 class="option-text">Start</h1></a>
+            </div>
+            <div class="option-button selected-option">
+                <a style="text-decoration: none;" (click)="shortBreakSelected()" [routerLink]=""><h1 class="option-text">Reset</h1></a>
+            </div>
+        </div>
+    </div>
 </div>
 
 
