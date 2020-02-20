@@ -13,10 +13,12 @@
 
 .title-holder {
     float: left;
-    width: 10%; 
+    width: 45%; 
     height: auto; 
     padding: 0 2%;
     margin: 0;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 h1 {
@@ -29,7 +31,7 @@ h1 {
     margin: 0;
     padding: 20px 0;
     float: left;
-    font-size: 25px;
+    font-size: min(3vw, 25px);
     line-height: 30px;
 }
 
@@ -117,4 +119,8 @@ h1 {
     margin: 4% 2%;
     color: white;
     text-decoration: none;
+}
+
+.icon {
+    color: white;
 }
