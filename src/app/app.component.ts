@@ -11,6 +11,7 @@ export class AppComponent {
     shortBreak = false;
     longBreak = false;
     startStopText = "Start";
+    time = "25:00";
 
     focusSelected() {
         this.focus = true;
@@ -27,6 +28,17 @@ export class AppComponent {
         this.shortBreak = false;
         this.longBreak = true;
         console.log("Hit");
+    }
+    startStopPressed() {
+        if(this.startStopText == "Start") {
+            this.startStopText = "Stop"
+        }
+        else {
+            this.startStopText = "Start"
+        }
+    }
+    resetPressed() {
+        console.log("will reset");
     }
 
 }

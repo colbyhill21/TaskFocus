@@ -23,14 +23,14 @@
             </div>
         </div>
         <div class="time-section">
-            <h1 class="timer-text">25:00</h1>
+            <h1 class="timer-text">{{time}}</h1>
         </div>
         <div class="button-holder">
             <div class="option-button selected-option">
-                <a style="text-decoration: none;" (click)="startStopPressed" [routerLink]=""><h1 class="button-text">Start</h1></a>
+                <a style="text-decoration: none;" (click)="startStopPressed()" [routerLink]=""><h1 class="button-text">{{startStopText}}</h1></a>
             </div>
             <div class="option-button selected-option">
-                <a style="text-decoration: none;" (click)="shortBreakSelected()" [routerLink]=""><h1 class="button-text">Reset</h1></a>
+                <a style="text-decoration: none;" (click)="resetPressed()" [routerLink]=""><h1 class="button-text">Reset</h1></a>
             </div>
         </div>
     </div>
