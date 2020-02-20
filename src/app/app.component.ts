@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { ModalService } from './services/modal.service';
 
 @Component({
     selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
     startStopText = "Start";
     numFocus = 0;
 
-    focusLength = 1;
+    focusLength = 25;
     shortBreakLength = 5;
     longBreakLength = 20;
 
@@ -23,22 +24,37 @@ export class AppComponent {
     timeLeft: number = this.focusLength * 60;
     interval;
 
+    // constructor(private modalService: ModalService) {
+    // }
+    // openModal(id: string) {
+    //     this.modalService.open(id);
+    // }
 
+    // closeModal(id: string) {
+    //     this.modalService.close(id);
+    // }
     focusSelected() {
         this.focus = true;
         this.shortBreak = false;
         this.longBreak = false;
+        this.currentLength = this.focusLength;
+        this.resetPressed();
     }
     shortBreakSelected() {
         this.focus = false;
         this.shortBreak = true;
         this.longBreak = false;
+        this.currentLength = this.shortBreakLength;
+        this.time = "" + this.currentLength + ":00";
+        this.resetPressed();
     }
     longBreakSelected() {
         this.focus = false;
         this.shortBreak = false;
         this.longBreak = true;
-        console.log("Hit");
+        this.currentLength = this.longBreakLength;
+        this.time = "" + this.currentLength + ":00";
+        this.resetPressed();
     }
     startStopPressed() {
         if (this.startStopText == "Start") {
@@ -81,7 +97,9 @@ export class AppComponent {
     }
 
     startBreak() {
-        
+        if(this.numFocus % 4 == 0) {
+            this.longBreakSelected();
+        }
     }
 
 }
