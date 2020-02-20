@@ -55,7 +55,7 @@ h1 {
 .timer-holder {
     text-align: center;
     width: 70%;
-    padding: 2%;
+    padding: 0%;
     margin: 4% 15%;
     border-radius: 10px;
     background-color: #4b99e6;
@@ -63,7 +63,8 @@ h1 {
 .option-holder {
     text-align: center;
     width: 80%;
-    margin: 0 10%;
+    margin: 0% 10%;
+    padding: 3%;
     display: flex;
     flex-flow: row wrap;
 }
@@ -74,7 +75,7 @@ h1 {
 }
 .selected-option {
     background-color: #2d6caa;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .option-text {
     font-family: "Montserrat";
@@ -89,14 +90,31 @@ h1 {
     text-align: center;
 }
 .timer-text {
-    font-size: 7vw;
+    font-size: 6vw;
     text-align: center;
     letter-spacing: 5px;
 }
 
+
+.button-holder {
+    text-align: center;
+    width: 50%;
+    margin: 0% 25%;
+    padding-bottom: 3%;
+    // padding: 3%;
+    display: flex;
+    flex-flow: row wrap;
+}
 .option-button {
     text-align: center;
-    margin: 0 10%;
-    width: 30%;
+    margin: 0 5%;
+    width: 40%;
     float: left;
+}
+.button-text {
+    font-family: "Montserrat";
+    font-size: min(2vw, 40px);
+    margin: 4% 2%;
+    color: white;
+    text-decoration: none;
 }
