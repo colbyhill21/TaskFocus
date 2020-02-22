@@ -79,7 +79,7 @@ export class AppComponent {
                 } else {
                     this.time += s;
                 }
-                this.setTitle("TaskFocus (" + this.time + ")"); //Update the Document Title in Browser
+                this.setTitle('TaskFocus (' + this.time + ')'); // Update the Document Title in Browser
             } else {
                 this.numFocus += 1;
                 this.startBreak();
