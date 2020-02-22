@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Title } from '@angular/platform-browser';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -23,6 +23,12 @@ export class AppComponent {
     timeLeft: number = this.focusLength * 60;
     interval;
 
+    public constructor(private titleService: Title ) { }
+
+    public setTitle(newTitle: string) {
+
+      this.titleService.setTitle( newTitle );
+    }
     focusSelected() {
         this.focus = true;
         this.shortBreak = false;
@@ -73,6 +79,7 @@ export class AppComponent {
                 } else {
                     this.time += s;
                 }
+                this.setTitle("TaskFocus (" + this.time + ")"); //Update the Document Title in Browser
             } else {
                 this.numFocus += 1;
                 this.startBreak();
@@ -87,6 +94,8 @@ export class AppComponent {
     startBreak() {
         if (this.numFocus % 4 === 0) {
             this.longBreakSelected();
+        } else {
+            this.shortBreakSelected();
         }
     }
 
