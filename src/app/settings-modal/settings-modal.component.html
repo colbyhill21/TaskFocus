@@ -1,12 +1,58 @@
 <div id="modal-content-wrapper">
     <header id="modal-header">
-        <h1 id="modal-title">HEADER TEXT!</h1>
+        <h1 id="modal-title">Timer Settings</h1>
     </header>
+    <div style="width: 100%; height: 3px; background-color: black; padding: 0; margin: 0;"> </div>
+    <section id="modal-body">
+        <div class="setting-holder"> 
+            <div class="setting-key-for-slider">
+                Focus Time
+            </div>
+            <div class="setting-slider">
+                <mat-slider thumbLabel min="1" max="30" step="1" value="{{focusValue}}"
+                (input)='changeFocusLengthSlider($event)'></mat-slider>
+            </div>
+        </div>
+    </section>
+    <section id="modal-body">
+        <div class="setting-holder"> 
+            <div class="setting-key-for-slider">
+                Short Break Time
+            </div>
+            <div class="setting-slider">
+                <mat-slider thumbLabel min="1" max="30" step="1" value="{{shortBreakValue}}"
+                (input)='changeShortBreakLengthSlider($event)'></mat-slider>
+            </div>
+        </div>
+    </section>
+    <section id="modal-body">
+        <div class="setting-holder"> 
+            <div class="setting-key-for-slider">
+                Long Break Time
+            </div>
+            <div class="setting-slider">
+                <mat-slider thumbLabel min="1" max="30" step="1" value="{{longBreakValue}}"
+                (input)='changeShortBreakLengthSlider($event)'></mat-slider>
+            </div>
+        </div>
+    </section>
+
+    <section id="modal-body">
+        <p>BODY SECTION TEXT</p>
+    </section>
+    <section id="modal-body">
+        <p>BODY SECTION TEXT</p>
+    </section>
+    <section id="modal-body">
+        <p>BODY SECTION TEXT</p>
+    </section>
+    <section id="modal-body">
+        <p>BODY SECTION TEXT</p>
+    </section>
     <section id="modal-body">
         <p>BODY SECTION TEXT</p>
     </section>
     <footer id="modal-footer">
-        <button mat-raised-button id="modal-action-button" (click)="actionFunction()">BUTTON 1</button>
-        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">BUTTON 2</button>
+        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">Back</button>
     </footer>
 </div>

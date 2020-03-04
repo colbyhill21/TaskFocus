@@ -9,8 +9,23 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 
 export class SettingsModalComponent implements OnInit {
+  focusValue = 25;
+  shortBreakValue = 5;
+  longBreakValue = 20;
 
   constructor(public dialogRef: MatDialogRef<SettingsModalComponent>) { }
+  
+  changeFocusLengthSlider(slider) {
+    this.focusValue = slider.value;
+  }
+
+  changeShortBreakLengthSlider(slider) {
+    this.shortBreakValue = slider.value;
+  }
+
+  changeLongBreakLengthSlider(slider) {
+    this.longBreakValue = slider.value;
+  }
 
   ngOnInit() {
   }

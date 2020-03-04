@@ -29,11 +29,11 @@ export class AppComponent {
     public constructor(private titleService: Title, public matDialog: MatDialog) { }
 
     openStatisticsModal() {
-        const dialogConfig = this.initDialogConfig(350, 600);
+        const dialogConfig = this.initDialogConfig(500, 400);
         this.matDialog.open(StatsModalComponent, dialogConfig);
     }
     openSettingsModal() {
-        const dialogConfig = this.initDialogConfig(350, 600);
+        const dialogConfig = this.initDialogConfig(600, 500);
         this.matDialog.open(SettingsModalComponent, dialogConfig);
     }
 
