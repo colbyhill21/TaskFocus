@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { StatsModalComponent } from './stats-modal/stats-modal.component';
+import { SettingsModalComponent } from './settings-modal/settings-modal.component';
 import { Title } from '@angular/platform-browser';
 @Component({
     selector: 'app-root',
@@ -23,11 +26,29 @@ export class AppComponent {
     timeLeft: number = this.focusLength * 60;
     interval;
 
-    public constructor(private titleService: Title ) { }
+    public constructor(private titleService: Title, public matDialog: MatDialog) { }
+
+    openStatisticsModal() {
+        var dialogConfig = this.initDialogConfig(350, 600);
+        this.matDialog.open(StatsModalComponent, dialogConfig);
+    }
+    openSettingsModal() {
+        var dialogConfig = this.initDialogConfig(350, 600);
+        this.matDialog.open(SettingsModalComponent, dialogConfig);
+    }
+
+    initDialogConfig(height: Number, width: Number): MatDialogConfig {
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.disableClose = true; // The user can't close the dialog by clicking outside its body
+        dialogConfig.id = "modal-component";
+        dialogConfig.height = height.toString() + "px";
+        dialogConfig.width = width.toString() + "px";
+        return dialogConfig;
+    }
+
 
     public setTitle(newTitle: string) {
-
-      this.titleService.setTitle( newTitle );
+        this.titleService.setTitle( newTitle );
     }
     focusSelected() {
         this.focus = true;
