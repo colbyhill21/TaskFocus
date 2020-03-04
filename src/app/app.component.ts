@@ -29,20 +29,20 @@ export class AppComponent {
     public constructor(private titleService: Title, public matDialog: MatDialog) { }
 
     openStatisticsModal() {
-        var dialogConfig = this.initDialogConfig(350, 600);
+        const dialogConfig = this.initDialogConfig(350, 600);
         this.matDialog.open(StatsModalComponent, dialogConfig);
     }
     openSettingsModal() {
-        var dialogConfig = this.initDialogConfig(350, 600);
+        const dialogConfig = this.initDialogConfig(350, 600);
         this.matDialog.open(SettingsModalComponent, dialogConfig);
     }
 
-    initDialogConfig(height: Number, width: Number): MatDialogConfig {
+    initDialogConfig(height: number, width: number): MatDialogConfig {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.disableClose = true; // The user can't close the dialog by clicking outside its body
-        dialogConfig.id = "modal-component";
-        dialogConfig.height = height.toString() + "px";
-        dialogConfig.width = width.toString() + "px";
+        dialogConfig.id = 'modal-component';
+        dialogConfig.height = height.toString() + 'px';
+        dialogConfig.width = width.toString() + 'px';
         return dialogConfig;
     }
 
