@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { SettingsModalComponent } from './settings-modal/settings-modal.component';
 import { StatsModalComponent } from './stats-modal/stats-modal.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StatsModalComponent } from './stats-modal/stats-modal.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

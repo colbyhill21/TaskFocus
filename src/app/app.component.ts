@@ -29,11 +29,11 @@ export class AppComponent {
     public constructor(private titleService: Title, public matDialog: MatDialog) { }
 
     openStatisticsModal() {
-        const dialogConfig = this.initDialogConfig(500, 400);
+        const dialogConfig = this.initDialogConfig(400, 400);
         this.matDialog.open(StatsModalComponent, dialogConfig);
     }
     openSettingsModal() {
-        const dialogConfig = this.initDialogConfig(600, 500);
+        const dialogConfig = this.initDialogConfig(450, 500);
         this.matDialog.open(SettingsModalComponent, dialogConfig);
     }
 
@@ -45,7 +45,6 @@ export class AppComponent {
         dialogConfig.width = width.toString() + 'px';
         return dialogConfig;
     }
-
 
     public setTitle(newTitle: string) {
         this.titleService.setTitle( newTitle );

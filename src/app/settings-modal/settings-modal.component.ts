@@ -12,9 +12,15 @@ export class SettingsModalComponent implements OnInit {
   focusValue = 25;
   shortBreakValue = 5;
   longBreakValue = 20;
+  longBreakInterval = 4;
+  timerAutoStart = false;
 
   constructor(public dialogRef: MatDialogRef<SettingsModalComponent>) { }
-  
+
+  AutoStartToggleChanged(toggleStatus) {
+    console.log(toggleStatus);
+    // TODO parse the value from the event
+  }
   changeFocusLengthSlider(slider) {
     this.focusValue = slider.value;
   }
@@ -25,6 +31,9 @@ export class SettingsModalComponent implements OnInit {
 
   changeLongBreakLengthSlider(slider) {
     this.longBreakValue = slider.value;
+  }
+  changeLongBreakInterval(slider) {
+    this.longBreakInterval = slider.value;
   }
 
   ngOnInit() {
