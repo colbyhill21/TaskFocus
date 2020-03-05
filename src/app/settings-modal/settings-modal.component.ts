@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -9,34 +9,54 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 
 export class SettingsModalComponent implements OnInit {
-  focusValue = 25;
-  shortBreakValue = 5;
-  longBreakValue = 20;
+  focusLength = 25;
+  shortBreakLength = 5;
+  longBreakLength = 20;
   longBreakInterval = 4;
-  timerAutoStart = false;
+  autoStartTimer = false;
+
+  @Input() public timerSettings;
+  @Output() settingsData = new EventEmitter<string>();
 
   constructor(public dialogRef: MatDialogRef<SettingsModalComponent>) { }
+
+  sendMessage() {
+    let message = this.focusLength.toString() + ", " + this.shortBreakLength.toString() + ", " + this.longBreakLength.toString() + ", " + this.longBreakInterval.toString() + ", ";
+    if(this.autoStartTimer) {
+      message += "true"
+    }
+    else {
+      message += "false "
+    }
+    this.settingsData.emit(message)
+  }
 
   AutoStartToggleChanged(toggleStatus) {
     console.log(toggleStatus);
     // TODO parse the value from the event
   }
   changeFocusLengthSlider(slider) {
-    this.focusValue = slider.value;
+    this.focusLength = slider.value;
   }
 
   changeShortBreakLengthSlider(slider) {
-    this.shortBreakValue = slider.value;
+    this.shortBreakLength = slider.value;
   }
 
   changeLongBreakLengthSlider(slider) {
-    this.longBreakValue = slider.value;
+    this.longBreakLength = slider.value;
   }
   changeLongBreakInterval(slider) {
     this.longBreakInterval = slider.value;
   }
 
   ngOnInit() {
+    console.log(this.timerSettings);
+    this.focusLength = this.timerSettings.focusLength;
+    this.shortBreakLength = this.timerSettings.shortBreakLength;
+    this.longBreakLength = this.timerSettings.longBreakLength;
+    this.longBreakInterval = this.timerSettings.longBreakInterval;
+    this.autoStartTimer = this.timerSettings.autoStartTimer;
   }
   // When the user clicks the action button a.k.a. the logout button in the\
   // modal, show an alert and followed by the closing of the modal
@@ -49,6 +69,7 @@ export class SettingsModalComponent implements OnInit {
   // just close the modal
   closeModal() {
     this.dialogRef.close();
+    this.sendMessage(); 
   }
 
 }
