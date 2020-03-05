@@ -37,16 +37,16 @@ export class AppComponent {
     openSettingsModal() {
         const dialogConfig = this.initDialogConfig(450, 500);
         const modalRef = this.matDialog.open(SettingsModalComponent, dialogConfig);
-        modalRef.componentInstance.timerSettings = { //pass our current settings as input
+        modalRef.componentInstance.timerSettings = { // pass our current settings as input
             focusLength: this.focusLength,
             shortBreakLength: this.shortBreakLength,
             longBreakLength: this.longBreakLength,
             longBreakInterval: this.longBreakInterval,
             autoStartTimer: this.autoStartTimer
-        }
+        };
         modalRef.componentInstance.settingsData.subscribe((receivedEntry) => {
-            this.updateSettings(receivedEntry.toString());// parse and update my values
-        })
+            this.updateSettings(receivedEntry.toString()); // parse and update my values
+        });
     }
 
     initDialogConfig(height: number, width: number): MatDialogConfig {
@@ -132,29 +132,26 @@ export class AppComponent {
     }
 
     updateSettings(settingsString: string) {
-        const splitted = settingsString.split(",")
+        const splitted = settingsString.split(',');
         // for (let i = 0; i < splitted.length; i++) {
         //     console.log(splitted[i]);
         // }
-        this.focusLength = Number(splitted[0].trim())
-        this.shortBreakLength = Number(splitted[1].trim())
-        this.longBreakLength = Number(splitted[2].trim())
-        this.longBreakInterval = Number(splitted[3].trim())
-        if(splitted[4].trim() === "true") {
+        this.focusLength = Number(splitted[0].trim());
+        this.shortBreakLength = Number(splitted[1].trim());
+        this.longBreakLength = Number(splitted[2].trim());
+        this.longBreakInterval = Number(splitted[3].trim());
+        if (splitted[4].trim() === 'true') {
             this.autoStartTimer = true;
-        }
-        else {
+        } else {
             this.autoStartTimer = false;
         }
 
-        //update timer
-        if(this.focus) {
+        // update timer
+        if (this.focus) {
             this.focusSelected();
-        }
-        else if(this.shortBreak) {
+        } else if (this.shortBreak) {
             this.shortBreakSelected();
-        }
-        else {
+        } else {
             this.longBreakSelected();
         }
     }

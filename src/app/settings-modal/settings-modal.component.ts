@@ -21,14 +21,14 @@ export class SettingsModalComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<SettingsModalComponent>) { }
 
   sendMessage() {
-    let message = this.focusLength.toString() + ", " + this.shortBreakLength.toString() + ", " + this.longBreakLength.toString() + ", " + this.longBreakInterval.toString() + ", ";
-    if(this.autoStartTimer) {
-      message += "true"
+    let message = this.focusLength.toString() + ', ' + this.shortBreakLength.toString() + ', ' + this.longBreakLength.toString() + ', ';
+    message += this.longBreakInterval.toString() + ', ';
+    if (this.autoStartTimer) {
+      message += 'true';
+    } else {
+      message += 'false';
     }
-    else {
-      message += "false "
-    }
-    this.settingsData.emit(message)
+    this.settingsData.emit(message);
   }
 
   AutoStartToggleChanged(toggleStatus) {
@@ -69,7 +69,7 @@ export class SettingsModalComponent implements OnInit {
   // just close the modal
   closeModal() {
     this.dialogRef.close();
-    this.sendMessage(); 
+    this.sendMessage();
   }
 
 }
