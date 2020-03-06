@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,16 @@ export class StatsModalComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<StatsModalComponent>) { }
 
+  @Input() public metrics;
+
+  numFocus = 0;
+  numShortBreak = 0;
+  numLongBreak = 0;
+
   ngOnInit() {
+    this.numFocus = this.metrics.numFocus;
+    this.numShortBreak = this.metrics.numShortBreak;
+    this.numLongBreak = this.metrics.numLongBreak;
   }
 
   // When the user clicks the action button a.k.a. the logout button in the\

@@ -14,7 +14,9 @@ export class AppComponent {
     shortBreak = false;
     longBreak = false;
     startStopText = 'Start';
-    numFocus = 1;
+    numFocus = 0;
+    numShortBreak = 0;
+    numLongBreak = 0;
 
     focusLength = 25;
     shortBreakLength = 5;
@@ -31,8 +33,13 @@ export class AppComponent {
     public constructor(private titleService: Title, public matDialog: MatDialog) { }
 
     openStatisticsModal() {
-        const dialogConfig = this.initDialogConfig(400, 400);
-        this.matDialog.open(StatsModalComponent, dialogConfig);
+        const dialogConfig = this.initDialogConfig(300, 400);
+        const modalRef = this.matDialog.open(StatsModalComponent, dialogConfig);
+        modalRef.componentInstance.metrics = {
+            numFocus: this.numFocus,
+            numShortBreak: this.numShortBreak,
+            numLongBreak: this.numLongBreak
+        };
     }
     openSettingsModal() {
         const dialogConfig = this.initDialogConfig(450, 500);
@@ -137,10 +144,12 @@ export class AppComponent {
     }
 
     startBreak() {
-        if (this.numFocus % this.longBreakInterval === 0) {
+        if ((this.numFocus % (this.longBreakInterval - 1)) === 0) {
             this.longBreakSelected();
+            this.numLongBreak += 1;
         } else {
             this.shortBreakSelected();
+            this.numShortBreak += 1;
         }
     }
 
