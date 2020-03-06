@@ -50,7 +50,6 @@ export class SettingsModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.timerSettings);
     this.focusLength = this.timerSettings.focusLength;
     this.shortBreakLength = this.timerSettings.shortBreakLength;
     this.longBreakLength = this.timerSettings.longBreakLength;

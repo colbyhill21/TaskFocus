@@ -113,7 +113,6 @@ export class AppComponent {
                 }
                 this.setTitle('TaskFocus (' + this.time + ')'); // Update the Document Title in Browser
             } else {
-                
                 this.nextSession();
             }
         }, 1000);
@@ -138,11 +137,6 @@ export class AppComponent {
     }
 
     startBreak() {
-
-        console.log("num focus: " + this.numFocus);
-        console.log(this.longBreakInterval);
-        let res = this.numFocus % this.longBreakInterval;
-        console.log(res);
         if (this.numFocus % this.longBreakInterval === 0) {
             this.longBreakSelected();
         } else {
