@@ -31,9 +31,8 @@ export class SettingsModalComponent implements OnInit {
     this.settingsData.emit(message);
   }
 
-  AutoStartToggleChanged(toggleStatus) {
-    console.log(toggleStatus);
-    // TODO parse the value from the event
+  autoStartToggleChanged(toggleStatus) {
+    this.autoStartTimer = toggleStatus.checked;
   }
   changeFocusLengthSlider(slider) {
     this.focusLength = slider.value;
