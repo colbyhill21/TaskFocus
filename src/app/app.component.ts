@@ -14,7 +14,7 @@ export class AppComponent {
     shortBreak = false;
     longBreak = false;
     startStopText = 'Start';
-    numFocus = 0;
+    numFocus = 1;
 
     focusLength = 25;
     shortBreakLength = 5;
@@ -113,10 +113,24 @@ export class AppComponent {
                 }
                 this.setTitle('TaskFocus (' + this.time + ')'); // Update the Document Title in Browser
             } else {
-                this.numFocus += 1;
-                this.startBreak();
+                
+                this.nextSession();
             }
         }, 1000);
+    }
+
+    nextSession() {
+        if (this.focus) {
+            this.startBreak();
+            this.numFocus += 1;
+        } else {
+            this.focusSelected();
+        }
+
+
+        if (this.autoStartTimer) {
+            this.startStopPressed();
+        }
     }
 
     pauseTimer() {
@@ -124,6 +138,11 @@ export class AppComponent {
     }
 
     startBreak() {
+
+        console.log("num focus: " + this.numFocus);
+        console.log(this.longBreakInterval);
+        let res = this.numFocus % this.longBreakInterval;
+        console.log(res);
         if (this.numFocus % this.longBreakInterval === 0) {
             this.longBreakSelected();
         } else {
