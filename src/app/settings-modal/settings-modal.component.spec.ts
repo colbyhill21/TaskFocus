@@ -3,11 +3,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SettingsModalComponent } from './settings-modal.component';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser'; 
 import 'hammerjs';
 
 describe('SettingsModalComponent', () => {
   let component: SettingsModalComponent;
   let fixture: ComponentFixture<SettingsModalComponent>;
+  let de: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,7 +21,7 @@ describe('SettingsModalComponent', () => {
       ],
       providers: [
         { provide: MatDialogRef, useValue: {} }
-      ]
+      ] 
     })
     .compileComponents();
   }));
@@ -34,9 +37,15 @@ describe('SettingsModalComponent', () => {
         autoStartTimer: false
     };
     fixture.detectChanges();
+    de = fixture.debugElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have an H1 Title of `Timer Settings`', () => {
+    expect(de.query(By.css('h1')).nativeElement.innerText).toBe('Timer Settings');
+  });
+  
 });
