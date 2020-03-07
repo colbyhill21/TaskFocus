@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { SettingsModalComponent } from './settings-modal/settings-modal.component';
+import { StatsModalComponent } from './stats-modal/stats-modal.component';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
-import { SettingsModalComponent } from './settings-modal/settings-modal.component';
-import { StatsModalComponent } from './stats-modal/stats-modal.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
