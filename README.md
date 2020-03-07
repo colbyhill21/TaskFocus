@@ -1,7 +1,9 @@
 [![Actions Status](https://github.com/colbyhill21/TaskFocus/workflows/CI/badge.svg)](https://github.com/colbyhill21/TaskFocus/actions)
 
 # TaskFocus
-Web based Pomodoro Technique Timer that offers customizable intervals. I am currently working on many features to add to this project now. 
+Web based Pomodoro Technique Timer that offers customizable intervals and tracks statistics.
+
+<img src="https://i.imgur.com/aQ74Ybb.png" height="400" alt="Screenshot of the homepage">
 
 ## Tools and Technologies
 I developed the site using Angular, HTML, and CSS. I am currently uitlizing GitHub Actions for Continous Integration. 
@@ -17,7 +19,6 @@ Run `ng g c component-name` to generate a new component.
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Testing
-I am currently utilizng Karma and Protractor for Unit and E2E testing.
 
 ### Running unit tests
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
