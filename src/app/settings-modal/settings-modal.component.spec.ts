@@ -26,7 +26,7 @@ describe('SettingsModalComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SettingsModalComponent);
     component = fixture.componentInstance;
-    component.timerSettings = { 
+    component.timerSettings = {
         focusLength: 25,
         shortBreakLength: 5,
         longBreakLength: 10,
