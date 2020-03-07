@@ -4,7 +4,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SettingsModalComponent } from './settings-modal.component';
 import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser'; 
+import { By } from '@angular/platform-browser';
 import 'hammerjs';
 
 describe('SettingsModalComponent', () => {
@@ -21,7 +21,7 @@ describe('SettingsModalComponent', () => {
       ],
       providers: [
         { provide: MatDialogRef, useValue: {} }
-      ] 
+      ]
     })
     .compileComponents();
   }));
@@ -47,5 +47,5 @@ describe('SettingsModalComponent', () => {
   it('should have an H1 Title of `Timer Settings`', () => {
     expect(de.query(By.css('h1')).nativeElement.innerText).toBe('Timer Settings');
   });
-  
+
 });

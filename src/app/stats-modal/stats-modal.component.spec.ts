@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogRef } from '@angular/material/dialog';
 import { StatsModalComponent } from './stats-modal.component';
 import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser'; 
+import { By } from '@angular/platform-browser';
 
 describe('StatsModalComponent', () => {
   let component: StatsModalComponent;
